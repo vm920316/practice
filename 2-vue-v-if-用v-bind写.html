@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+    <style>
+      .displaynone {
+          display: none;
+      }
+      .show {
+          display: block;
+      }
+    </style>
+
+</head>
+
+<body>
+    <form id="lianxi">
+        <div :class="{ displaynone: toggle, show: !toggle }">
+            <lable>Username:</lable>
+            <input palceholder="Enter you username" key="username-input">
+        </div>
+        <div :class="{ displaynone: !toggle, show: toggle }">
+            <lable>Email:</lable>
+            <input palceholder="Enter you email" key="email-input">
+        </div>
+        <input type="checkbox" v-model="toggle">
+        <!-- <input type="button" value="切换格式" @click="change"> -->
+    </form>
+</body>
+
+<script>
+    new Vue({
+        el: "#lianxi",
+        data() {
+            return {
+                toggle: true
+            };
+        }
+
+        // methods: {
+        //     change() {
+        //       this.toggle = !this.toggle
+        //     //   if (this.toggle === true) {
+        //     //       this.toggle = false
+        //     //   } else {
+        //     //       this.toggle = true
+        //     //   }
+        //     }
+        // }
+    })
+
+
+</script>
+
+</html>

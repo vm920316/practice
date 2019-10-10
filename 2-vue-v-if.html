@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="lianxi">
+        <div v-if="toggle">
+            <lable>Username:</lable>
+            <input palceholder="Enter you username" key="username-input">
+        </div>
+        <div v-else>
+            <lable>Email:</lable>
+            <input palceholder="Enter you email" key="email-input">
+        </div>
+        <input type="button" value="切换格式" @click="change">
+    </form>
+    <script>
+        new Vue({
+            el: "#lianxi",
+            data() {
+                return {
+                    toggle: true
+                };
+            },
+
+            methods: {
+                change() {
+                    this.toggle = !this.toggle
+                    // if (this.toggle === true) {        上面的方法是下面方法的简写
+                    //     this.toggle = false
+                    // } else {
+                    //     this.toggle = true
+                    // }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

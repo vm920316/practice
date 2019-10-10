@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+    <style>
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0px;
+            padding-bottom: 20px;
+            /* border-bottom: 1px solid rgb(199, 199, 199); */
+        }
+
+        .nav-items .nav-item {
+            width: 60px;
+            /* height: 100px;
+              background-color: pink; */
+        }
+
+        .nav-items .nav-item .item-pho {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: pink;
+            margin: 0 auto 5px;
+        }
+
+        .nav-items .nav-item .item-name {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- <template v-for="(item, index) in navItems">
+        <NavItem :key="index" v-bind:url="item.url" v-bind:name="item.name"></NavItem>
+    </template> -->
+
+    <div id="lianxi">
+        <nav-items :message-list="list"></nav-items>
+    </div>
+
+    <!-- <div class="nav-item">
+            <div class="item-pho"></div>
+            <span class="item-name">每日推荐</span>
+        </div>
+        <div class="nav-item">
+            <div class="item-pho"></div>
+            <span class="item-name">歌单</span>
+        </div>
+        <div class="nav-item">
+            <div class="item-pho"></div>
+            <span class="item-name">排行榜</span>
+        </div>
+        <div class="nav-item">
+            <div class="item-pho"></div>
+            <span class="item-name">电台</span>
+        </div>
+        <div class="nav-item">
+            <div class="item-pho"></div>
+            <span class="item-name">直播</span>
+        </div> -->
+
+    <script>
+        Vue.component('middle-zujian', {
+            data() {
+                return {
+
+                }
+            },
+            props: {
+                message: {
+                    type: String
+                },
+                url: {
+                    type: String
+                }
+            },
+            template: '<div class="nav-item" ><div class="item-pho"></div><span class="item-name">{{message}}</span></div>'
+        })
+
+        Vue.component('nav-items', {
+            props: {
+                messageList: {
+                    type: Array
+                }
+            },
+            template: `<div class="nav-items">
+                        <middle-zujian v-for="(item, index) in messageList" :key="index" :message="item.message" :url="item.url"></middle-zujian>
+                      </div>`,
+            data() {
+                return {
+                    // messageList: [
+                    //     { message: '每日推荐', url: "aaaaa" },
+                    //     { message: 'ssss', url: "qwweq" },
+                    //     { message: "asda", url: "ahhh" }
+                    // ]
+                }
+            }
+        })
+
+        new Vue({
+            el: "#lianxi",
+            data() {
+                return {
+                    list: [
+                        { message: "meiri", url: "aaa" },
+                        { message: "meiri", url: "aaa" },
+                        { message: "meiri", url: "aaa" }
+                    ]
+                }
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

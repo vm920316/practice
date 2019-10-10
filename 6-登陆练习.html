@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="lianxi">
+        <input placeholder="请输入邮箱信息" v-model="youxiang" @focus="focus"><br>
+        <input placeholder="请输入密码" v-model="mima" @focus="focus"><br>
+
+        <div class="tiaoyue">
+                <input type="checkbox" name="agreement" id="agreement" v-model="agreement"/>
+                <label class="text-zs" for="agreement">I agree with Terms and conition</label>
+        </div>
+
+        <div v-show="showError" class="yincanxinxi">
+                <span>{{errorMassage}}</span>
+        </div>
+        <input type="button" value="提交按钮" @click="submit">
+
+
+
+    </form>
+
+    <script>
+        new Vue({
+            el: "#lianxi",
+            data() {
+                return {
+                    youxiang:'',
+                    mima:'',
+
+                    showError:false,
+                    errorMassage:'',
+                    agreement:false
+                }
+            },
+            methods: {
+                submit(){
+                    let result = this.result();
+                    if(result===false){
+                        return;
+                    }
+                    alert("登陆成功");
+                },
+
+                result(){
+                    this.showError=true;
+                    if(this.agreement===false){
+                        this.errorMassage="请先同意我们的规则"
+                        return false;
+                    }
+                    if(this.youxiang===""){
+                        this.errorMassage="请输入邮箱"
+                        return false;
+                    }
+                    if(!this.youxiang.match(/^\d{4,6}@\w{2,3}\.\w{3,4}$/)){
+                        this.errorMassage="请输入正确的邮箱"
+                        return false;
+                    }
+                    if(this.mima===""){
+                        this.errorMassage="请输入密码"
+                        return false;
+                    }
+                    if(!this.mima.match(/^\d{6,9}$/)){
+                        this.errorMassage="请输入正确的密码"
+                        return false;
+                    }
+                    this.showError=false
+                    return true
+                },
+
+                focus (){
+                    this.showError = false;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

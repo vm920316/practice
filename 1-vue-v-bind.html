@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+
+<style>
+.active{background-color: pink;}
+.jingtai{color: blue;}
+.green{font-size: 20px;}
+.red{background-color: red;}
+.yellow{color:yellow;}
+.blue{color:blue;}
+.pink{background-color: pink;}
+</style>
+</head>
+
+<body>
+    <div id="zujian">
+        <!-- 先静态赋值，再v-bind动态赋值 -->
+        <div class="jingtai"       
+        v-bind:class="{active:isActive,green:isGreen}" style="width: 100px;height: 100px;text-align: center;line-height: 100px;">
+            hi Vue!
+        </div>
+
+        <br/>
+
+        <div v-bind:class="['red','yellow']">      <!-- 静态赋值 -->
+            hello Vue!!
+        </div>
+
+        <br/>
+
+        <div v-bind:class="[isActive?'active':'',isBlue?'blue':'']">      <!-- 动态赋值，三元运算 -->
+            hello Vue!!!
+        </div>
+
+        
+        <div v-bind:style="{color:color, fontSize:size, 'background-color':isPink?'pink':''}">
+                love Vue!!!!!!!
+        </div>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: "#zujian",
+            data: {
+                isActive: true,
+                isGreen: true,
+
+                isBlue:true,
+
+                color:'red',
+                size:'50px',
+                isPink: true
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

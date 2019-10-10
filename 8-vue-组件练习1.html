@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+    <style>
+        #main-button {
+            border-radius: 13px;
+            border: 1px solid rgb(199, 199, 199);
+            width: 100px;
+            height: 26px;
+            background-color: transparent;
+            margin: 2px 0;
+            font-family: "微软雅黑";
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .main-content-item {
+            width: 106px;
+            height: 160px;
+        }
+
+        .main-content-item-pho {
+            width: 106px;
+            height: 106px;
+            background-color: pink;
+            border-radius: 10px;
+        }
+
+        .main-content-item-music {
+            display: block;
+            font-size: 14px;
+            font-family: "微软雅黑";
+            text-align: left;
+            margin-top: 5px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .main-content-item-name {
+            display: block;
+            font-size: 12px;
+            color: rgb(199, 199, 199);
+            font-family: "微软雅黑";
+            text-align: left;
+            margin-top: 3px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="lianxi">
+        <abc v-bind:list="items"></abc>
+    </div>
+
+    <script>
+        Vue.component('dandu-zujian', {
+            data() {
+                return {
+
+                }
+            },
+            props: {
+                mes1: {
+                    type: String
+                },
+                mes2: {
+                    type: String
+                },
+                url: {
+                    type: String
+                }
+            },
+            template: ` <div class="main-content-item">
+                <div class="main-content-item-pho"></div>
+                <span class="main-content-item-music">{{mes1}}</span>
+                <span class="main-content-item-name">{{mes2}}</span>
+            </div>`
+        })
+
+        Vue.component('abc', {
+            data() {
+                return {
+
+                }
+            },
+            props: {
+                list: {
+                    type: Array
+                }
+            },
+            template: `<div class="main-content" >
+        <dandu-zujian v-for="(item,index) in list" :key="index" v-bind:mes1="item.mes1" v-bind:mes2="item.mes2"
+            v-bind:url="item.url"></dandu-zujian>
+    </div>`
+        })
+
+        new Vue({
+            el: "#lianxi",
+            data() {
+                return {
+                    items: [
+                        { mes1: "胡歌", mes2: "逍遥叹", url: "aaa" },
+                        { mes1: "光亮", mes2: "童话", url: "bbb" },
+                        { mes1: "胡歌", mes2: "逍遥叹", url: "aaa" },
+                        { mes1: "光亮", mes2: "童话", url: "bbb" },
+                        { mes1: "胡歌", mes2: "逍遥叹", url: "aaa" }]
+                }
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="lianxi">
+        <button-one title="这是用props创建的新属性"> <h1>这是一个插槽</h1> </button-one>
+        <button-one></button-one>
+    </div>
+
+
+    <script>
+        Vue.component('button-one', {
+            props:['title'],
+            data() {
+                return {
+                    count: 0
+                }
+            },
+            template: '<div><slot></slot><h3>hellow Vue!!!</h3><button v-on:click="leiji">{{title}}------点击我：{{count}}次 </button></div>',
+            methods: {
+                leiji() {
+                    this.count=this.count+1
+                }
+            }
+        })
+
+        new Vue({
+            el: "#lianxi"
+        })
+
+
+    </script>
+
+</body>
+
+</html>
