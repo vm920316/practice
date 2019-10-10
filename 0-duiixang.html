@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        function Animal(name, age, interests, friends, parent) {
+            this.name = name
+            this.age = age
+            this.interests = interests
+            this.friends = friends
+            this.parent = parent
+            this.eat = function () { console.log(`My name is ${this.name},I\'m earting food`) }
+        }
+
+        Animal.mykey()
+        Animal.prototype.area = "fujian"
+        Animal.prototype.relatives = [1, 2, 3, 4]
+        Animal.prototype.wife = { name: "xiang", age: 17 }
+        Animal.prototype.addRelative = function (relative) {
+            this.relatives.push(relative)
+        }
+        Animal.prototype.makeFriendWith = function (you) {
+            this.friends.push(you)
+        }
+
+        var a1 = new Animal("xiang", 27, [4, 5, 6, 7], [7, 8, 9], { father: "wei", mather: "ye" })
+        var a2 = new Animal("wang", 17, [14, 15, 16, 17], [17, 18, 19], { father: "zhang", mather: "zheng" })
+
+        a1.eat()
+        a2.eat()
+
+        a1.interests.push("sleeping")
+        a2.interests.push("walking")
+        console.log(a1.interests)
+        console.log(a2.interests)
+
+        a1.parent.father = "a1father"
+        a2.parent.mather = "a2mather"
+        console.log(a1.parent)
+        console.log(a2.parent)
+
+        a1.area = "china"
+        a2.area = "hongkong"
+        console.log(a1.area, a1)
+        console.log(a2.area, a2)
+
+        a1.addRelative("tiger")
+        a2.addRelative("cat")
+        console.log(a1.relatives, a1)
+        console.log(a2.relatives, a2)
+
+        a1.makeFriendWith("jion")
+        a2.makeFriendWith("mike")
+        console.log(a1.friends)
+        console.log(a2.friends)
+
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>

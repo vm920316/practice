@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function Practice(name, age, arr) {
+            this.mingzi = name
+            this.nianling = age
+            this.shuzufirst = arr || []
+            this.fuc=function (){
+                console.log(this.mingzi)
+            }
+        }
+         Practice.prototype.dizhi="fujian"
+         Practice.prototype.eat=function(){
+             console.log(this.nianling)
+         }
+         Practice.prototype.ffff=function (){
+             console.log(this.dizhi)
+         }
+         
+         Practice.isPratice=function(a){
+             return a instanceof Practice
+         }
+
+         var ir= new Practice("xxxx",18,[1,2,1,3])
+         Practice.isPratice(ir)
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
