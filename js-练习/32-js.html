@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>比较两个数，哪个更接近100</h3>
+    <script>
+        function near(a, b) {
+            if (a !== b) {
+                x = Math.abs(a - 100)
+                y = Math.abs(b - 100)
+                if (x < y) {
+                    return a
+                } else {
+                    return b
+                }
+            } else {
+                return false
+            }
+        }
+        document.writeln(near(10, 80))
+        document.writeln(near(10, -80))
+        document.writeln(near(-90, -80))
+
+    </script>
+
+
+
+</body>
+
+</html>

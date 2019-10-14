@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以检查给定整数在 100 或 400 的 20 范围内</h3>
+
+    <script>
+        function judge(n) {
+            if ((Math.abs(n - 100) < 20) || (Math.abs(n - 400) < 20)) {
+                console.log('true')
+            } else {
+                console.log('false')
+            }
+
+        }
+        judge(90)
+        judge(70)
+        judge(110)
+        judge(190)
+        judge(390)
+        judge(350)
+        judge(410)
+        judge(590)
+    </script>
+</body>
+
+</html>

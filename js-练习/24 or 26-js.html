@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序，从给定字符串创建新字符串，前面和后面添加给定字符串的第一个字符</h3>
+    <script>
+        function change(str) {
+            if (!str) {
+                return str
+            }
+            str = str.toString()
+            return str[0] + str + str[0]
+        }
+        document.write(change("asd") + '<br>')
+        document.write(change("") + '<br>')
+        document.write(change() + '<br>')
+        document.write(change(null) + '<br>')
+        document.write(change(0) + '<br>')
+        document.write(change(123) + '<br>')
+
+
+        function judge(str) {
+            if (typeof str !== 'string' || !str || str.length < 3) {
+                return str
+            }
+
+            var lastLetters = str.slice(str.length - 3)
+            return lastLetters + str + lastLetters
+        }
+        document.write(judge("asd") + '<br>')
+        document.write(judge("") + '<br>')
+        document.write(judge() + '<br>')
+        document.write(judge(null) + '<br>')
+        document.write(judge(0) + '<br>')
+        document.write(judge(123) + '<br>')
+    </script>
+</body>
+
+</html>

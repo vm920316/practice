@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>给定一串字符串，把每个单词首字母改成大写</h3>
+    <script>
+        function check(str) {
+            var arr = str.split(" ")
+            for (var i = 0; i < arr.length; i++) {
+                // arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1)
+                arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1)
+            }
+            return arr.join(" ")
+        }
+        document.writeln(check("hello Js i love you"))
+
+
+        function check1(str) {
+            var arr = str.split(" ")
+            arr.forEach((element, i) => {
+                // arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1)
+
+                arr[i] = element[0].toUpperCase() + element.slice(1)
+            });
+            return arr.join(" ")
+        }
+
+
+        function check2(str) {
+            var arr = str.split(" ")
+            arr = arr.map(item => {
+                return item[0].toUpperCase() + item.slice(1)
+            })
+            return arr.join(" ")
+        }
+
+
+    </script>
+</body>
+
+</html>

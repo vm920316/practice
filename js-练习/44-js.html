@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>从三个给定的数字中，如果一个数字大于20，并且小于另外两个数中的一个，则输出true</h3>
+    <h4>解析：至少有两个数大于20，且不相等</h4>
+    <script>
+        function check(a, b, c) {
+            if (a > 20 && (a < b || a < c)) {
+                return true
+            }
+            if (b > 20 && (b < a || b < c)) {
+                return true
+            }
+            if (c > 20 && (c < a || c < b)) {
+                return true
+            }
+            return false
+        }
+
+        document.writeln(check(21, 22, 23))   //走a分支
+        document.writeln(check(21, 10, 23))
+        document.writeln(check(21, 10, 9))
+        document.writeln(check(2, 9, 3))
+        document.writeln(check(2, 23, 24))   //走b分支
+        document.writeln(check(2, 29, 23))   //走c分支
+
+    </script>
+</body>
+
+</html>

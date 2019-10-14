@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以检查字符串是否以"Java"开头，否则为 false</h3>
+    <script>
+        function judge(str) {
+            if (typeof str !== "string" || !str) {
+                return false
+            }
+            return str.startsWith("Java")
+        }
+        document.writeln(judge(123))
+        document.writeln(judge(""))
+        document.writeln(judge())
+        document.writeln(judge(null))
+        document.writeln(judge("123"))
+        document.writeln(judge("Javaqqqq"))
+        document.writeln(judge("2Javaqqqq"))
+
+
+
+
+    </script>
+</body>
+
+</html>

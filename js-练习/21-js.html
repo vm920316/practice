@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以创建一个在给定字符串前面添加"Py"的新字符串。如果给定的字符串以 "Py] 开头"，则返回原始字符串</h3>
+    <script>
+        function judge(str) {
+            // if (String.prototype.slice(str, 0, 2) !== 'Py') {
+            //     return 'Py' + str
+            // }
+            // if (!str) {
+            //     return str
+            // }
+
+            // if (str.slice(0, 2) !== 'Py') {
+            //     return 'Py' + str
+            // }
+
+            if (str !== null && str !== undefined && str.slice(0, 2) !== "Py") {
+                str = 'Py' + str
+            }
+            // if (!(str === null || str === undefined || str.slice(0, 2) === "Py")) {
+            //     str = 'Py' + str
+            // }
+            return str
+        }
+        console.log(judge("and"))
+        console.log(judge("123a1nd"))
+        console.log(judge("Py123"))
+        console.log(judge())
+        console.log(judge(""))
+        console.log(judge('1'))
+    </script>
+</body>
+
+</html>

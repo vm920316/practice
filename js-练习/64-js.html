@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以串联两个字符串并返回结果。如果字符串的长度不同，则从较长的字符串中删除字符</h3>
+    <script>
+        function check(str1, str2) {
+            if (str1.length === str2.length) {
+                return false
+            }
+            var min = Math.min(str1.length, str2.length)
+            return str1.slice(str1.length - min) + str2.slice(str2.length - min)
+        }
+        document.writeln(check("asdfg", "jk"))    //fgjk
+        document.writeln(check("qw", 'ertyui'))   //qwui
+        document.writeln(check("qw", 'gh'))   //false
+
+    </script>
+
+</body>
+
+</html>

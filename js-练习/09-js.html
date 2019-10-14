@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>计算现在到下一个圣诞节的天数</h3>
+    <script>
+        function getDay() {
+            var now = new Date()
+            var month = now.getMonth()
+            var date = now.getDate()
+            var chris
+            if (month >= 11 && date >= 25) {
+                chris = new Date(now.getFullYear() + 1, 11, 25)
+            } else {
+                chris = new Date(now.getFullYear(), 11, 25)
+            }
+            var time = chris.getTime() - now.getTime()
+            time = Math.ceil(time / 1000 / 60 / 60 / 24)
+            return time
+
+            // var today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+            // // var next = new Date(now.getFullYear() + 1, 11, 25)
+            // var next = new Date(now.getFullYear() + 1, 11, 25)
+            // var time = next.getTime() - now.getTime()
+            // time = Math.floor(time / 1000 / 60 / 60 / 24)
+            // console.log(time)
+        }
+
+        var day = getDay()
+        document.write(day)
+
+    </script>
+</body>
+
+</html>

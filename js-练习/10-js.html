@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" placeholder="input a number" id="num1"><br>
+    <input type="number" placeholder="input a number" id="num2"><br>
+    <input type="button" onclick="multiEvent()" value="mul"><br>
+    <input type="button" onclick="divEvent()" value="div"><br>
+    <p id="result"></p>
+
+    <script>
+        function multiEvent() {
+            var input1 = document.getElementById("num1").valueAsNumber
+            var input2 = document.getElementById("num2").valueAsNumber
+            var result = multi(input1, input2)
+            var p = document.getElementById("result")
+            p.innerHTML = result
+        }
+        function multi(input1, input2) {
+            return input1 * input2
+        }
+
+
+        function divEvent() {
+            var input1 = document.getElementById("num1").valueAsNumber
+            var input2 = document.getElementById("num2").valueAsNumber
+            var result = divide(input1, input2)
+            var p = document.getElementById("result")
+            p.innerHTML = result
+        }
+        function divide(input1, input2) {
+            return input1 / input2
+        }
+    </script>
+
+</body>
+
+</html>

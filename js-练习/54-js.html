@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以计算给定字符串的元音数</h3>
+    <script>
+        function check(str) {
+            return str.replace(/[^aeiou]/g, "").length
+        }
+        document.writeln(check("Python"))
+        document.writeln(check("w3resource.com"))
+    </script>
+
+
+
+</body>
+
+</html>

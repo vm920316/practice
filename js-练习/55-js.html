@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以检查给定字符串是否包含相同数量的 p 和 t 存在。</h3>
+    <script>
+        function check(str) {
+            var a = str.replace(/[^p]/g, "").length
+            var b = str.replace(/[^t]/g, "").length
+            // if (a === b) {
+            //     return true
+            // }
+            // return false
+            return a === b
+        }
+        document.writeln(check("asdppsdtt"))
+        document.writeln(check("asdfghttap"))
+
+    </script>
+
+</body>
+
+</html>

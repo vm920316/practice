@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序检查给定的正数是 3 的倍数还是 7 的倍数</h3>
+    <script>
+        function change(n) {
+            if (typeof n !== 'number' || n <= 0) {
+                return n
+            }
+            return n % 3 === 0 || n % 7 === 0
+        }
+        document.writeln(change("asd"))
+        document.writeln(change(-1))
+        document.writeln(change(11))
+        document.writeln(change(21))
+
+    </script>
+</body>
+
+</html>

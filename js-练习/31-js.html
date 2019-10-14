@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>比较三个数的大小</h3>
+    <script>
+        function check(a, b, c) {
+            let max
+            if (a > b) {
+                max = a
+            } else {
+                max = b
+            }
+            if (c > max) {
+                max = c
+            }
+            return max
+        }
+        document.writeln(check(2, 5, 39))
+    </script>
+
+</body>
+
+</html>

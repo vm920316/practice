@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var day = new Date()
+        var year = day.getFullYear();
+        var month = day.getMonth();
+        var date = day.getDate();
+        month = month + 1;
+        month = checkTime(month);
+        date = checkTime(date);
+        function checkTime(t) {
+            t = (t < 10) ? "0" + t : t;
+            return t;
+        }
+        console.log(month + "-" + date + '-' + year);
+    </script>
+</body>
+
+</html>

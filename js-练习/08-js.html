@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type='number' placeholder="请输入1-10数字进行猜测" id="input">
+    <!-- <button onclick="submit()">提交验证</button> -->
+    <input type='button' value="提交" onclick="submit()">
+    <p id="result"></p>
+
+    <script>
+        function submit() {
+            var t = Math.floor(Math.random() * 10 + 1);
+            var input = document.getElementById("input").value
+            // console.log([input])
+            var result = document.getElementById("result")
+            // console.log([result], t)
+            if (input.trim() === t.toString()) {
+                result.innerHTML = '猜对了'
+                // console.log('猜对了')
+            } else {
+                // console.log('不对')
+                result.innerHTML = '不对'
+            }
+
+        }
+    </script>
+</body>
+
+</html>

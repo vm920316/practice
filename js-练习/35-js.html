@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以检查给定字符串包含指定字符的 2 到 4 个数字</h3>
+    <script>
+        function checkIn(str, char) {
+            var sum = 0
+            for (var i = 0; i < str.length; i++) {
+                if (str.charAt(i) === char) {
+                    sum++;
+                }
+            }
+            if (sum >= 2 && sum <= 4) {
+                return true
+            } else {
+                return false
+            }
+        }
+        document.writeln(checkIn("asdfasdfa", "a"))
+        document.writeln(checkIn("asdfasdf", "as"))
+        document.writeln(checkIn("asdfgh", "a"))
+        document.writeln(checkIn("asdasdasd", "a"))
+        document.writeln(checkIn("aaasdaa", "a"))
+
+
+    </script>
+
+
+</body>
+
+</html>

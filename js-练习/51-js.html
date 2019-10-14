@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>给定数字转化为时间和分钟</h3>
+    <script>
+        function change(num) {
+            var h = Math.floor(num / 60)
+            var m = num % 60
+            return h + ":" + m
+        }
+        document.writeln(change(71))
+        document.writeln(change(450))
+        document.writeln(change(10))
+
+
+    </script>
+</body>
+
+</html>

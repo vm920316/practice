@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序，从给定的正整数中查找较大的数字，这两个数字在 40.60 范围内</h3>
+    <script>
+        function checkAdjue(a, b) {
+            if (a > 40 && a < 60 && b > 40 && b < 60) {
+                if (a > b) {
+                    return a
+                } else {
+                    return b
+                }
+            } else {
+                return false
+            }
+        }
+        document.writeln(checkAdjue(20, 50))
+        document.writeln(checkAdjue(59, 50))
+        document.writeln(checkAdjue(48, 57))
+        document.writeln(checkAdjue(48, 100))
+
+
+
+    </script>
+
+
+</body>
+
+</html>

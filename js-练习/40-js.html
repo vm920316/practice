@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序，从两个给定整数中检查，如果一个整数为 8 或其总和或差值为 8</h3>
+    <script>
+        function check(a, b) {
+            if (a === 8 || b === 8) {
+                return true
+            } else {
+                if (a + b === 8 || Math.abs(a - b) === 8) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+        document.writeln(check(8, 1))
+        document.writeln(check(7, 1))
+        document.writeln(check(-7, 1))
+        document.writeln(check(9, 2))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body onload="animate_string('target')">
+    <h2>将字符最后一位字母截取，放到字符首位，然后再截取新的字符，再放到首位，一直进行这样的操作</h2>
+    <h3>編寫 JavaScript 程式，定期從字串末尾刪除一個字母並將其附加到前面，從而將字串"w3resource"旋轉到正確的方向</h3>
+    <p id="target">jiayoukeyide</p>
+
+    <script>
+        // var document = {
+        //     childNodes: [pl, p2],
+        //     getElementById(str) {
+        //         return this.childNodes.filter(item => {
+        //             return item.id === str
+        //         })
+        //     }
+        // }
+        // var pl = {
+        //     tag: 'p',
+        //     id: 'target',
+        //     childNodes: [{
+        //         tag: 'text',
+        //         data: 'aaasfsdfsdf'
+        //     }]
+        // }
+
+        function animate_string(s) {
+            var element = document.getElementById(s);  // 取到p这整个元素，是个对象
+            console.log([element])
+            var textNode = element.childNodes[0];  // 取p这个元素的子元素，取第一个对象。childNodes 属性返回包含被选节点的子节点的 NodeList
+            var text = textNode.data.trim();  // 最终渠道第一个对象的字符串
+            // var text = element.textContent.trim()
+            setInterval(function () {
+                text = text[text.length - 1] + text.substring(0, text.length - 1);
+                textNode.data = text;
+                // element.textContent = text
+            }, 400);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>编写 JavaScript 程序以删除给定字符串指定位置的字符并返回新字符串</h3>
+    <script>
+        // function judge(str, position) {
+        //     var arr = str.split("")
+        //     arr.splice(position, 1)
+        //     return arr.join("")
+        // }
+
+        function judgeSlice(str, position) {
+            return str.slice(0, position) + str.slice(position + 1)
+        }
+
+        document.write(judgeSlice("asdf", 2))
+    </script>
+</body>
+
+</html>

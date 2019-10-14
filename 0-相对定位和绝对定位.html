@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .first {
+            background-color: brown;
+            width: 100px;
+            height: 60px;
+            position: relative;
+            top: 30px;
+            left: 30px;
+            /* 这个定位，原本位置是占着，只是以原来位置偏移了 */
+        }
+
+        .first-one {
+            background-color: green;
+            width: 100%;
+            height: 40px;
+            position: relative;
+            left: 40px;
+            /* 这个定位主要解释第一个定位是占位置的，然后第二个定位也占位置 */
+        }
+
+        .second {
+            background-color: pink;
+            width: 200px;
+            height: 60px;
+            left: 60px;
+            position: absolute;
+            /* 这个绝对定位是相对于first-one进行定位的，不占位置 */
+        }
+
+        .third {
+            background-color: darkblue;
+            width: 100px;
+            height: 100px;
+        }
+
+        .four {
+            background-color: indianred;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: -20px;
+            /* 这个绝对定位又以body为父元素定位，不是正常文本流 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">
+        jiayou
+    </div>
+    <div class="first-one">
+        jiayou
+    </div>
+    <div class="second">
+        wonengchenggongde
+    </div>
+    <div class="third">keyide1</div>
+    <div class="third">keyide1</div>
+    <div class="third">keyide1</div>
+    <div class="third">keyide1</div>
+    <div class="four"">keyide1</div>
+</body>
+
+</html>

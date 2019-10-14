@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>给定两个正数，若其中有一个数是7或11的倍数时输出true（不能两个数都满足），否则为false</h3>
+    <script>
+        function check(a, b) {
+            return is7or11(a) ? !is7or11(b) : is7or11(b)
+        }
+        function is7or11(num) {
+            return num % 7 === 0 || num % 11 === 0
+        }
+
+        document.writeln(check(7, 21))  //f
+        document.writeln(check(7, 11))  //f
+        document.writeln(check(7, 15))   //t
+        document.writeln(check(30, 21))  //t
+        document.writeln(check(30, 23))  //f
+
+        // function valCheck(a, b) {
+        //     return !(is7or11(a) && is7or11(b)) ?  is7or11(a) || is7or11(a) : false
+
+        //     return !is7or11(a) || !is7or11(b) ?  is7or11(a) || is7or11(a) : false
+        // }
+
+    </script>
+
+</body>
+
+</html>

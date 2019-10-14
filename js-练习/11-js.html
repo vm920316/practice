@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="input" id="input">
+    <input type="button" value="submit" onclick="transfer()">
+    <p id="result"></p>
+
+    <script>
+        function transfer() {
+            var templ = document.getElementById("input").value
+            var p = document.getElementById("result")
+            p.innerHTML = transfertem(templ)
+        }
+
+        function transfertem(templ) {
+            var c = 'C'
+            var f = 'F'
+            var ext = templ[templ.length - 1]
+            var result
+            if (c === ext) {
+                result = cToF(templ, f)
+            } else if (f === ext) {
+                result = fToC(templ, c)
+            } else {
+                result = "invalid"
+            }
+            return result
+        }
+
+        function cToF(t, f) {
+            return (9 / 5 * parseFloat(t) + 32) + f
+        }
+        function fToC(t, c) {
+            return (5 / 9 * (parseFloat(templ) - 32)) + c
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

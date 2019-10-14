@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .first {
+            background-color: brown;
+            width: 200px;
+            height: 40px;          
+        }
+        .second {
+            background-color: blue;
+            width: 150px;
+            height: 100px;          
+        }
+        .third {
+            background-color: green;
+            width: 100px;
+            height: 60px;   
+            float: right;
+            margin-right: 40px;    
+            /* 脱离正常文本流，以前一个文本流second为对其点    */
+        }
+        .four {
+            background-color: black;
+            width: 300px;
+            height: 40px;  
+            color: white; 
+            float: right;  
+            /* 脱离正常文本流，以前一个文本流third为对其点，
+            不在同一行的原因是：这一行不够third和four同时放下，自动顶到下一格的原因
+            重新设置宽度就能体现同行
+            */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">这是第一个框</div>
+    <div class="second">这是第二个框</div>
+    <div class="third">这是第三个框</div>
+    <div class="four">这是第四个框</div>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>编写 JavaScript 程序以检查两个给定的整数值是否在 50..99 （包括） 范围内。如果其中任何一个在上述范围内，则返回 true</h3>
+    <script>
+        // function judge(a, b) {
+        //     if (typeof a !== "number" || typeof b !== "number") {
+        //         return false
+        //     }
+        //     return range(a) || range(b)
+        // }
+
+        function range(a) {
+            return a >= 50 && a <= 99
+        }
+
+        function judge1() {
+            var args = [...arguments]
+            var func = function (item) {
+                return typeof item !== 'number'       //判断输入的是否不为数字
+            }
+            if (!args.length || args.some(func)) {   //其中有一个
+                return false
+            }
+
+            return args.some(item => {
+                return range(item)
+            })
+        }
+
+
+        // function some(arr, func) {
+            // if (typeof func !== 'function') {
+            //     return false
+            // }
+        //     for (let i = 0; i < arr.length; i++) {
+        //         let result = func(arr[i], i, arr)
+        //         if (result) {
+        //             return true
+        //         }
+        //     }
+        //     return false
+        // }
+
+        // function aaa(item) {
+        //     return item === 1
+        // }
+
+        // some([1, 2], aaa)
+
+    </script>
+</body>
+
+</html>

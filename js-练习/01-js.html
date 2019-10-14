@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time"></div>
+    <script>
+        function aaa() {
+            var toDay = new Date();
+            var day = toDay.getDay();
+            var h = toDay.getHours();
+            var m = toDay.getMinutes();
+            var s = toDay.getSeconds();
+            var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+            console.log('Today is :' + dayList[day] + '.');
+
+            if (h > 12) {
+                h = h - 12 + ' PM';
+            } else {
+                h = h + ' AM';
+            }
+
+            if (m < 10) {
+                m = '0' + m;
+            }                   //  m=(m<10)?'0'+m:m;
+
+            if (s < 10) {
+                s = '0' + s;
+            }
+            console.log('Current time is :' + h + ':' + m + ':' + s);
+
+            // document.write('Current time is :' + h + ':' + m + ':' + s + '<br/>');
+            document.getElementById('time').innerHTML = `Current time is : ${h} : ${m} : ${s}`;
+
+        }
+
+        // setInterval(() => {
+        //     aaa()
+        // }, 1000);
+
+        setInterval(aaa, 1000);
+    </script>
+</body>
+
+</html>

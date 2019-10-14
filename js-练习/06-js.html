@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<h2>判断闰年</h2>
+<h3>能被100整除且能被400整除的时闰年<br>不能被100整除但能被4整除时是闰年</h3>
+
+<body>
+    <script>
+        function leayear(year) {
+            if (year % 100 === 0) {
+                if (year % 400 === 0) {
+                    console.log('这是一个闰年')
+                } else {
+                    console.log('不是闰年')
+                }
+            }
+            else {
+                if (year % 4 === 0) {
+                    console.log('这是一个闰年')
+                }
+                else {
+                    console.log('不是闰年')
+                }
+            }
+        }
+        leayear(1900);
+        leayear(2000);
+        leayear(1992);
+    </script>
+</body>
+
+</html>
